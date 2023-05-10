@@ -2,8 +2,11 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from alembic import context
+import os
 
 config = context.config
+
+config.set_main_option('sqlalchemy.url', os.getenv('AIRFLOW_CONN_DB_POSTGRES'))
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
