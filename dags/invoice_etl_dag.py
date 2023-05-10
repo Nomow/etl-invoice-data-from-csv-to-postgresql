@@ -9,8 +9,6 @@ from src.tasks.transform_task import transform_invoice_data_task
 from src.tasks.extract_task import csv_to_pandas_df_task
 import os
 
-
-
 with DAG(
     'invoice_etl_dag',
     description='etl pipeline for extracting data from csv file, cleaning the data and loading it in postgresql database table',
@@ -28,7 +26,6 @@ with DAG(
     tags=['etl'],
     params={"csv_path" : os.getenv("AIRFLOW_HOME") + "/data"},
 ) as dag:
-
     start_task = DummyOperator(task_id= "start_task")
     sensor_csv_task = FileSensor( task_id="check_if_csv_exists_task", poke_interval=5, filepath="{{params.csv_path}}/raw/invoices.csv")
     csv_to_dataframe_task = csv_to_pandas_df_task("{{params.csv_path}}/raw/", "invoices.csv")
@@ -46,5 +43,3 @@ with DAG(
         copy_and_rename_data_task,
         stop_task,
     )
-
-
