@@ -66,3 +66,8 @@ AirFlow Web UI is accessing through [http://localhost:8080](http://localhost:808
 - Password - ```test123```
 - Database name - ```invoice_database```
 - table name of invoices - ```invoices```
+
+## To Do's
+- Automated tests
+- CI pipeline
+- dockerized version
