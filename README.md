@@ -55,7 +55,7 @@ All commands should be run from repositories root directory.
 ```
 
 ## Accessing AirFlow
-AirFlow Web UI is accessing through [http://localhost:8080](http://localhost:8080)
+AirFlow Web UI is accessed through [http://localhost:8080](http://localhost:8080)
 - Username ```admin```
 - Password - see the console after running ```airflow standalone``` command or see ```standalone_admin_password.txt``` in root directory, as it's auto generated.
 - Name of DAG is ```invoice_etl_dag``` under tag ```etl```.
