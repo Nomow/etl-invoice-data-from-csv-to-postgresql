@@ -1,12 +1,10 @@
 from airflow.decorators import task
-import pandas as pd
 import logging
 import os
 import uuid
 import shutil
 
 logger = logging.getLogger("airflow.task")
-
 
 @task()
 def copy_and_rename_csv_to_processed_folder_task(path : str, file_name : str) -> None:

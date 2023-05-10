@@ -2,9 +2,7 @@ from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.sensors.filesystem import FileSensor
 from airflow.models.baseoperator import chain
-
 from datetime import datetime, timedelta
-
 from src.tasks.clean_task import copy_and_rename_csv_to_processed_folder_task
 from src.tasks.load_task import load_transformed_invoices_to_database_task
 from src.tasks.transform_task import transform_invoice_data_task
@@ -19,6 +17,7 @@ with DAG(
     tags=['etl'],
     params={"csv_path" : "/home/nomow/Documents/airflow/data"}
 ) as dag:
+
     start_task = DummyOperator(task_id= "start_task")
     sensor_csv_task = FileSensor( task_id="check_if_csv_exists_task", poke_interval=5, filepath="{{params.csv_path}}/raw/invoices.csv")
     csv_to_dataframe_task = csv_to_pandas_df_task("{{params.csv_path}}/raw/", "invoices.csv")

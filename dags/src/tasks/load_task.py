@@ -1,7 +1,6 @@
 from airflow.decorators import task
 import pandas as pd
 import logging
-
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 
 logger = logging.getLogger("airflow.task")

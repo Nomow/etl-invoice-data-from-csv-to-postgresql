@@ -5,7 +5,6 @@ import os
 
 logger = logging.getLogger("airflow.task")
 
-
 @task()
 def csv_to_pandas_df_task(path : str, file_name : str) -> pd.DataFrame:
     full_path = os.path.join(path, file_name)
