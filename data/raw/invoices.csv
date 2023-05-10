@@ -1,0 +1,11 @@
+invoice_number,invoice_date,customer_name,item_name,quantity,price,tax_rate,total_amount
+INV-001,2023-01-01,Acme Corp.,Widget A,10,15,0.1,165
+INV-001,2023-01-01,Acme Corp.,Widget B,5,25,0.1,137.5
+INV-002,2023-01-02,Global Inc.,Widget A,12,15,0.2,216
+INV-003,2023-01-03,Mega Corp.,Widget C,20,30,0.15,690
+INV-003,,Mega Corp.,Widget D,10,40,0.15,460
+INV-004,2023-01-05,Acme Corp.,Widget B,8,25,0.1,220
+INV-005,2023-01-06,Acme Corp.,,10,-20,0.1,
+INV-006,2023-01-07,Global Inc.,Widget A,-5,15,0.2,
+INV-007,2023-01-08,Acme Corp.,Widget A,10,15,,
+INV-008,2023-01-09,,Widget B,5,25,0.1,137.5
